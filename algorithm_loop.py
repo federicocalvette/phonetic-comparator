@@ -1,8 +1,6 @@
 import comparator
 
 # Strings s/* o tmbn llamado completo, ya que no tiene mask en el nombre
-
-
 def algorithm_string_complete(input_str_1, input_str_2):
     # Arreglos
     array_str_1 = input_str_1.split(' ')
@@ -28,7 +26,7 @@ def algorithm_string_complete(input_str_1, input_str_2):
 
 
 
-
+# Funcion para cuando el string 2 tiene *** en el nombre o cuando es más corto c/elemento al splitearlo
 def algorithm_string_mask(input_str_1, input_str_2):
     '''
     Ejemplos de inputs:
@@ -56,6 +54,7 @@ def algorithm_string_mask(input_str_1, input_str_2):
             array_percentage_intermediate.append(float(comparator_porcentage))
 
         max_value = max(array_percentage_intermediate)
+        
         array_percentage_final.append(float(max_value))
 
     porcentage_final = float("{:.2f}".format(sum(array_percentage_final)/len(array_percentage_final)))
