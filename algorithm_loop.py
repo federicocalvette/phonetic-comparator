@@ -23,39 +23,40 @@ def algorithm_string_complete(input_str_1, input_str_2):
 
         array_percentage_final.append(float(max_value))
 
-    print(array_percentage_final)
     porcentage_final = float("{:.2f}".format(sum(array_percentage_final)/len(array_percentage_final)))
-    print(porcentage_final)
-
     return porcentage_final
 
 
-input_str_1 = 'Holaaloh Fedeadef'
-input_str_2 = 'Hola**** Fede****'
 
-s2_list = input_str_2.split(' ')
-s2_list_splited = []
 
-for item in s2_list:
-    s2_list_splited.append(item.strip("*"))
+def algorithm_string_mask(input_str_1, input_str_2):
+    '''
+    Ejemplos de inputs:
+        input_str_1 = 'Holaaloh Fedeadef'
+        input_str_2 = 'Hola**** Fede****'
+    '''
+    str_2_list = input_str_2.split(' ')
 
-array_str_1 = input_str_1.split(' ')
-array_str_2 = s2_list_splited
+    str_2_list_splited = []
+    for item in str_2_list:
+        str_2_list_splited.append(item.strip("*"))
 
-# Arreglo final, donde guardo los mejores % de cada vuelta del bucle
-array_percentage_final = []
+    array_str_1 = input_str_1.split(' ')
+    array_str_2 = str_2_list_splited
 
-# Comparar de a un elemento del arreglo 1 con todas las del arreglo 2
-for index_str_2 in array_str_2:
-    array_percentage_intermediate = []
-    for index_str_1 in array_str_1:
-        index_str_1_to_compare = index_str_1[:len(index_str_2)]
-        comparator_porcentage = comparator.name_comparator(index_str_2, index_str_1_to_compare)
-        array_percentage_intermediate.append(float(comparator_porcentage))
+    # Arreglo final, donde guardo los mejores % de cada vuelta del bucle
+    array_percentage_final = []
 
-    max_value = max(array_percentage_intermediate)
-    array_percentage_final.append(float(max_value))
+    # Comparar de a un elemento del arreglo 2 con todas las del arreglo 1 pero usando el mismo largo q contiene el string más corto
+    for index_str_2 in array_str_2:
+        array_percentage_intermediate = []
+        for index_str_1 in array_str_1:
+            index_str_1_to_compare = index_str_1[:len(index_str_2)]
+            comparator_porcentage = comparator.name_comparator(index_str_2, index_str_1_to_compare)
+            array_percentage_intermediate.append(float(comparator_porcentage))
 
-print(array_percentage_final)
-porcentage_final = float("{:.2f}".format(sum(array_percentage_final)/len(array_percentage_final)))
-print(porcentage_final)
+        max_value = max(array_percentage_intermediate)
+        array_percentage_final.append(float(max_value))
+
+    porcentage_final = float("{:.2f}".format(sum(array_percentage_final)/len(array_percentage_final)))
+    return porcentage_final
