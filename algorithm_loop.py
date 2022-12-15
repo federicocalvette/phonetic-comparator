@@ -1,5 +1,6 @@
 import comparator
 
+# Funcion para strings completos sin mascaras de *
 # Strings s/* o tmbn llamado completo, ya que no tiene mask en el nombre
 def algorithm_string_complete(input_str_1, input_str_2):
     # Arreglos
