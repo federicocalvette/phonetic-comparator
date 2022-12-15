@@ -19,5 +19,5 @@ def printer(input_str_1, input_str_2, porcentage, contain_mask):
     else:
         message = f'El nombre "{input_str_1}" comparado con "{input_str_2}", tiene un porcentaje de coincidencia de {color + str(porcentage) +"%"+ Fore.RESET}.'
 
-    print(message)
+    print(message + '\n')
 
