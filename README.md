@@ -19,5 +19,6 @@ python3 main.py
 <img src="./img/e4.png" alt="Example"/>
 <img src="./img/e5.png" alt="Example"/>
 <img src="./img/e6.png" alt="Example"/>
-<img src="./img/e7.png" alt="Example"/>
 <img src="./img/e8.png" alt="Example"/>
+<img src="./img/e7.png" alt="Example"/>
+
